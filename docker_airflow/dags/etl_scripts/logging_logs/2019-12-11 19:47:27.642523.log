@@ -1,0 +1,144 @@
+2019-12-11 19:47:27,646   DEBUG   hooks      417   _alias_event_name            Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2019-12-11 19:47:27,650   DEBUG   hooks      417   _alias_event_name            Changing event name from before-call.apigateway to before-call.api-gateway
+2019-12-11 19:47:27,651   DEBUG   hooks      417   _alias_event_name            Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2019-12-11 19:47:27,654   DEBUG   hooks      417   _alias_event_name            Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2019-12-11 19:47:27,655   DEBUG   hooks      417   _alias_event_name            Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2019-12-11 19:47:27,656   DEBUG   hooks      417   _alias_event_name            Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2019-12-11 19:47:27,657   DEBUG   hooks      417   _alias_event_name            Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2019-12-11 19:47:27,661   DEBUG   hooks      417   _alias_event_name            Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2019-12-11 19:47:27,661   DEBUG   hooks      417   _alias_event_name            Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2019-12-11 19:47:27,662   DEBUG   hooks      417   _alias_event_name            Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2019-12-11 19:47:27,663   DEBUG   hooks      417   _alias_event_name            Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2019-12-11 19:47:27,672   DEBUG   loaders    174   load_file                    Loading JSON file: /usr/local/lib/python3.7/site-packages/boto3/data/s3/2006-03-01/resources-1.json
+2019-12-11 19:47:27,685   DEBUG   credentials 1947  load_credentials             Looking for credentials via: env
+2019-12-11 19:47:27,686   DEBUG   credentials 1947  load_credentials             Looking for credentials via: assume-role
+2019-12-11 19:47:27,687   DEBUG   credentials 1947  load_credentials             Looking for credentials via: assume-role-with-web-identity
+2019-12-11 19:47:27,687   DEBUG   credentials 1947  load_credentials             Looking for credentials via: shared-credentials-file
+2019-12-11 19:47:27,688   DEBUG   credentials 1947  load_credentials             Looking for credentials via: custom-process
+2019-12-11 19:47:27,688   DEBUG   credentials 1947  load_credentials             Looking for credentials via: config-file
+2019-12-11 19:47:27,689   DEBUG   credentials 1947  load_credentials             Looking for credentials via: ec2-credentials-file
+2019-12-11 19:47:27,689   DEBUG   credentials 1947  load_credentials             Looking for credentials via: boto-config
+2019-12-11 19:47:27,690   DEBUG   credentials 1947  load_credentials             Looking for credentials via: container-role
+2019-12-11 19:47:27,690   DEBUG   credentials 1947  load_credentials             Looking for credentials via: iam-role
+2019-12-11 19:47:27,691   DEBUG   connectionpool 225   _new_conn                    Starting new HTTP connection (1): 169.254.169.254:80
+2019-12-11 19:47:28,698   DEBUG   utils      308   _fetch_metadata_token        Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/botocore/httpsession.py", line 263, in send
+    chunked=self._chunked(request.headers),
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/packages/six.py", line 735, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 125, in _send_request
+    method, url, body, headers, *args, **kwargs)
+  File "/usr/local/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 152, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 236, in send
+    return super(AWSConnection, self).send(str)
+  File "/usr/local/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 164, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x7f81f8f816d0>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/botocore/utils.py", line 296, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/usr/local/lib/python3.7/site-packages/botocore/httpsession.py", line 287, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2019-12-11 19:47:28,702   DEBUG   connectionpool 225   _new_conn                    Starting new HTTP connection (2): 169.254.169.254:80
+2019-12-11 19:47:29,705   DEBUG   utils      345   _get_request                 Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/botocore/httpsession.py", line 263, in send
+    chunked=self._chunked(request.headers),
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/packages/six.py", line 735, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 125, in _send_request
+    method, url, body, headers, *args, **kwargs)
+  File "/usr/local/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 152, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.7/site-packages/botocore/awsrequest.py", line 236, in send
+    return super(AWSConnection, self).send(str)
+  File "/usr/local/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 164, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x7f81f8eb8f10>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/botocore/utils.py", line 339, in _get_request
+    response = self._session.send(request.prepare())
+  File "/usr/local/lib/python3.7/site-packages/botocore/httpsession.py", line 287, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2019-12-11 19:47:29,706   DEBUG   utils      424   retrieve_iam_role_credentials Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2019-12-11 19:47:29,708   DEBUG   loaders    174   load_file                    Loading JSON file: /usr/local/lib/python3.7/site-packages/botocore/data/endpoints.json
+2019-12-11 19:47:29,713   DEBUG   hooks      210   _emit                        Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f820d990200>
+2019-12-11 19:47:29,722   DEBUG   loaders    174   load_file                    Loading JSON file: /usr/local/lib/python3.7/site-packages/botocore/data/s3/2006-03-01/service-2.json
+2019-12-11 19:47:29,732   DEBUG   hooks      210   _emit                        Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f820d9797a0>
+2019-12-11 19:47:29,733   DEBUG   hooks      210   _emit                        Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f81f9200ef0>
+2019-12-11 19:47:29,754   DEBUG   hooks      210   _emit                        Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f820d979560>
+2019-12-11 19:47:29,758   DEBUG   endpoint   266   create_endpoint              Setting s3 timeout as (60, 60)
+2019-12-11 19:47:29,759   DEBUG   loaders    174   load_file                    Loading JSON file: /usr/local/lib/python3.7/site-packages/botocore/data/_retry.json
+2019-12-11 19:47:29,760   DEBUG   client     136   _register_retries            Registering retry handlers for service: s3
+2019-12-11 19:47:29,763   DEBUG   factory    66    load_from_definition         Loading s3:s3
+2019-12-11 19:47:29,765   DEBUG   factory    66    load_from_definition         Loading s3:Bucket
+2019-12-11 19:47:29,767   DEBUG   model      358   _load_name_with_category     Renaming Bucket attribute name
+2019-12-11 19:47:29,769   DEBUG   hooks      210   _emit                        Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x7f81f8fa4050>

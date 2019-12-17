@@ -4,6 +4,26 @@ I built this project because I wanted to learn the basics of an optimal toolset 
 
 The code/stack: Flask App that's a mini Twitter clone → [Segment](https://segment.com/) event tracking → AWS Kinesis stream → AWS Firehose → AWS S3 raw objects collected with prefix `web-data/raw` as raw data (allows flexibility to use this store for any type of later analysis) → transform raw data into relational db tables using Airflow in a Docker image running locally → send AWS transformed objects to S3 with prefix `web-data/transformed` → AWS Glue to define schema (aka Data Catalog) to use for Athena → AWS Athena (serverless db) → AWS Quicksight (dashboard tool)
 
+# Short-term Next Steps for the Project
+
+Goal: ensure relevant containers include packages in `requirements.txt` to so class methods can be used to run Airflow dag. 
+
+Tasks:
+- Better understand what happens when you pull a docker image.
+- Decide if I should edit the dockerfile locally to include a command to pip install packages. If so, how could I keep up with any changes on the image listed in docker hub?
+- What are the pros and cons of creating my own Dockerfile? 
+- If I update the dockerfile to pip install `requirements.txt`, what services each running on a container (redis, postgres, flower, webserver and scheduler) will have these packages in `requirements.txt`? 
+- Setup YAML file (in docker_airflow/docker-compose.yml) with `docker-compose up` command. Webserver and scheduler likely need the packages in requirements.txt to run the dag. Verify this.
+- check docker services are running
+- set new start date for dag slightly in the future
+- verify dag is running
+    - check Airflow UI
+    - run airflow `list_dags`
+    - check dag logs
+    - see if s3 has new transformation objects for today's date
+
+If you have any feedback on these next steps, please let me know! dan@dfrieds.com
+
 # Project Overview: 5-Minute Read (Slightly Detailed)
 
 ## Flask App
@@ -30,19 +50,10 @@ I then setup AWS Glue to read from the `web-data/transformed` prefix and it infe
 
 Connect Athena DB to Amazon Quicksight dashboard tool. Write SQL queries and use drag-and-drop editor for insights.
 
-# Next Steps for the Project
+# Long-term Next Steps
 
-- better understand what happens when you pull a docker image (I may need to re-pull with a requirements.txt in the repo so pip packages are automatically installed; I think all services created use the same base packages; need `boto3` and `pyarrow` installed)
-- Setup CeleryExecutor YAML file with `docker-compose up` command
 - ensure pycache folders aren't automatically created
 - ensure example dags aren't loaded and don't appear with `airflow list_dags`
-- set new start date for dag slightly in the future
-- verify dag is running
-    - check docker services are running
-    - check Airflow UI
-    - run airflow `list_dags`
-    - check dag logs
-    - see if s3 has new transformation objects for today's date
 - add more inline comments to etl scripts
 - Use static type checker for Python [http://mypy-lang.org/](http://mypy-lang.org/) (function_with_pep484_type_annotations)
 - Build great documentation [http://www.sphinx-doc.org/en/master/](http://www.sphinx-doc.org/en/master/)
